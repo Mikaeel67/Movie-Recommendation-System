@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 
 # ─── CONFIG ──────────────────────────────────────────────────────
-API_URL = "https://bagel-hardening-phoniness.ngrok-free.dev"  # Update with your ngrok/Render URL
+API_URL = "https://bagel-hardening-phoniness.ngrok-free.dev"
 
 st.set_page_config(
     page_title="🎬 Movie Recommender",
