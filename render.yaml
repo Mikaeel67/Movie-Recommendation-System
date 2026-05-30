@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: movie-recommender-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: 'AQ.Ab8RN6IsZdYUPbMBbAwpveSfQ0N_72s-5AJIZP_fge022KfAEw'
+        sync: false
