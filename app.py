@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 
 # ─── CONFIG ──────────────────────────────────────────────────────
-API_URL = "https://bagel-hardening-phoniness.ngrok-free.dev"
+API_URL = "https://bagel-hardening-phoniness.ngrok-free.dev" 
 
 st.set_page_config(
     page_title="🎬 Movie Recommender",
@@ -62,7 +62,6 @@ def check_api_health():
     except:
         return None
 
-
 def get_recommendations(title, user_id=1, n=10):
     try:
         res = requests.post(f"{API_URL}/recommend",
@@ -72,7 +71,6 @@ def get_recommendations(title, user_id=1, n=10):
     except Exception as e:
         st.error(f"API Error: {e}")
         return None
-
 
 def nl_search(query, n=10):
     try:
@@ -84,7 +82,6 @@ def nl_search(query, n=10):
         st.error(f"API Error: {e}")
         return None
 
-
 def search_movies(q):
     try:
         res = requests.get(f"{API_URL}/movies/search", params={"q": q}, timeout=10)
@@ -93,7 +90,7 @@ def search_movies(q):
         return None
 
 
-# ─── MOVIE CARD ───────────────────────────────────────────────────
+# ─── MOVIE CARD ──────────────────────────────────────────────────
 def render_movie_card(movie, score_key='hybrid_score', index=0):
     is_african  = movie.get('source') == 'African_IMDb'
     score       = movie.get(score_key, movie.get('relevance_score', 0))
